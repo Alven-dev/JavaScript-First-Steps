@@ -17,32 +17,69 @@ if (choice >= 1 && choice <= 3) {
     alert("Invalid choice! Please refresh and try again.");
 }
 
-let playerPokemon {
+let playerPokemon = {
     name: starters[choice],
     health: 20,
     level: 5,
     experience: 0,
     attack: function() {
         if (this.name === "Charmander") {
-            return Math.floor
+            return Math.floor(Math.random() * 6) + 2;
+        } else if (this.name === "Bulbasaur") {
+            return Math.floor(Math.random() * 5) + 2; 
+        } else if (this.name === "Squirtle") {
+            return Math.floor(Math.random() * 5) + 2;
         }
     }
-}
+};
+
+let pikachu = {
+    name: "Pikachu",
+    health: 20,
+    level: 5,
+    experience: 0,
+    attack: function() {
+        return Math.floor(Math.random() * 4) + 2;
+    }
+};
 
 alert("Let's test your new Pokemon in a battle!");
 
 alert("A wild Pikachu appeared!")
 
 
+function battle() {
+    let turn = 0;
+    while (playerPokemon.health > 0 && pikachu.health > 0) {
+        if (turn === 0) {
+            let damage = playerPokemon.attack();
+            pikachu.health -= damage;
+            alert(playerPokemon.name + " used Tackle! It dealt " + damage + " damage to Pikachu!");
+        } else {
+            let damage = pikachu.attack();
+            playerPokemon.health -= damage;
+            alert("Pikachu used Tackle! It dealt " + damage + " damage to " + playerPokemon.name + "!");
+        }
+        
+        if (playerPokemon <= 0) {
+            alert(playerPokemon.name + " has fainted! Pikachu wins the battle!");
+            break;
+        } else if (pikachu.health <= 0) {
+            alert("Pikachu has fainted! " + playerPokemon.name + " wins the battle!");
+            break;
+        }
+        turn = 1 - turn;
+    }
+    if (playerPokemon.health > 0) {
+        playerPokemon.experience += 23;
+        alert(playerPokemon.name + " gained 23 experience points!");
+    }
 
-let trainer = prompt("How much HP does your pokemon have?");
-
-
-
-if (trainer > 50) {
-    alert("Critical Hit!");
-} else if (trainer > 20 && trainer < 50) {
-    alert("It's not very effective...");
-} else {
-    alert("You run away!");
+    
+    if (playerPokemon.experience >= 15) {
+        playerPokemon.level = 6;
+        alert(playerPokemon.name + " leveled up to level 6!");
+    }
 }
+
+battle();
