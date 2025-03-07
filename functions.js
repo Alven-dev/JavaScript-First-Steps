@@ -29,3 +29,28 @@ function counter(x) {
         console.log(i);
     }
 }
+
+
+
+function candy(x, y) {
+    if ( x >= y ) {
+        alert("Tu peux acheter le bonbon !");
+    } else {
+        alert("Il te manque X pièces.");
+    }
+    
+}
+
+fonction conseilMeteo(meteo) {
+    if (meteo === "soleil") {
+        alert("Mets de la crème solaire !");
+    } else if (meteo === "pluie") {
+        alert("Prends ton parapluie !");
+    } else if (meteo === "neige") {
+        alert("Mets une écharpe !");
+    } else if (meteo === "vent") {
+        alert("Mets vos lunettes de protection !");
+    } else {
+        alert("Je connais pas ce meteo");
+    }
+}
