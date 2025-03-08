@@ -60,7 +60,7 @@ function process() {
     setTimeout(gratitude, 3000);
     setTimeout(function () {
         console.log("Process ending...");
-    }, 5000);
+    }, 4000);
 }
 
 
