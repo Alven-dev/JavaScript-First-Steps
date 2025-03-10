@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#one {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid blue;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+#two {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid blue;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+#three {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid blue;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.text {
+    display: none;
+}
+
+.fill {
+    background-color: blue;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.content.active {
+    max-height: 500px;
+}
+
+h3 { 
+    margin-left: 5rem;
+}
+
+.container {
+    width: 100%;
+    border: 2px solid black;
+}
